@@ -2,6 +2,9 @@
   "folders": [
     {
       "path": "."
+    },
+    {
+      "path": "../udacity-weather-journal-app"
     }
   ],
   "settings": {}
