@@ -15,7 +15,7 @@ const handleSubmit = async (event) => {
   fetch(API_weather)
     .then((res) => res.json())
     .then((data) => {
-      console.log(data.main.temp);
+      console.log(data.main);
       return data;
     })
     .then(function (data) {

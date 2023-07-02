@@ -2,6 +2,7 @@ const path = require("path");
 const webpack = require("webpack");
 const HtmlWebPackPlugin = require("html-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
   entry: "./src/client/index.js",
@@ -20,6 +21,9 @@ module.exports = {
       },
     ],
   },
+  devServer: {
+    hot: true, // enable hot module replacement
+  },
   plugins: [
     new HtmlWebPackPlugin({
       template: "./src/client/views/index.html",
@@ -34,6 +38,9 @@ module.exports = {
       cleanStaleWebpackAssets: true,
       protectWebpackAssets: false,
     }),
+    new HtmlWebpackPlugin({
+      title: "Hot Module Replacement",
+    }), // add the HotModuleReplacementPlugin
   ],
   output: {
     libraryTarget: "var",
